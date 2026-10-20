@@ -1,0 +1,289 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #0a0a12;
+    --card: #151522;
+    --purple: #8b5cf6;
+    --neon: #a3ff12;
+    --white: #ffffff;
+    --gray: #b4b4c5;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    border-bottom: 1px solid #ffffff15;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 26px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--neon);
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--neon);
+}
+
+.hero {
+    min-height: 85vh;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.subtitle {
+    color: var(--neon);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero h1 span,
+.section-title span {
+    color: var(--purple);
+}
+
+.hero h2 {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--neon);
+    margin-bottom: 20px;
+}
+
+.description {
+    color: var(--gray);
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    margin: 5px 8px 5px 0;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--neon);
+    color: #111;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--purple);
+}
+
+.profile {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.profile-circle {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--neon));
+    display: grid;
+    place-items: center;
+    color: #101018;
+    font-size: 120px;
+    font-weight: 800;
+    border: 8px solid #ffffff15;
+    box-shadow: 0 0 45px #8b5cf640;
+}
+
+.profile p {
+    color: var(--gray);
+    margin-top: 20px;
+}
+
+.section {
+    padding: 80px 8%;
+    scroll-margin-top: 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.about-card,
+.contact-card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #ffffff12;
+    color: var(--gray);
+}
+
+.biodata {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff15;
+}
+
+.biodata strong {
+    color: var(--neon);
+}
+
+.skills-container,
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.skill-card,
+.portfolio-card {
+    background: var(--card);
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #ffffff12;
+    transition: 0.3s;
+}
+
+.skill-card:hover,
+.portfolio-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--purple);
+}
+
+.skill-card h3,
+.portfolio-card h3 {
+    color: var(--neon);
+    margin-bottom: 10px;
+}
+
+.skill-card p,
+.portfolio-card p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.project-number {
+    font-size: 35px;
+    color: var(--purple);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    margin: 8px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #ffffff15;
+    color: var(--gray);
+    font-size: 13px;
+}
+
+/* Tampilan HP dan tablet */
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 55px;
+    }
+
+    .profile-circle {
+        width: 200px;
+        height: 200px;
+        font-size: 90px;
+    }
+
+    .skills-container,
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .section {
+        padding: 55px 6%;
+    }
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .biodata {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .about-card,
+    .contact-card {
+        padding: 22px;
+    }
+}
